@@ -1,106 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aastha Handicrafts | Premium Handcrafted Rakhis &ndash; Wholesale &amp; Retail</title>
+  <meta name="description" content="Aastha Handicrafts - Premium handcrafted Rakhis direct from artisans of Rajasthan. Rudraksha, Designer AD, Kundan, Lumba Sets & more. Wholesale inquiries welcome." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAFAF8',
+            crimson: '#7B1113',
+            crimsondark: '#650D0F',
+            gold: '#D4AF37',
+            golddeep: '#A9821C',
+            charcoal: '#1F2937',
+            wa: '#25D366',
+            wadark: '#1EB857'
+          },
+          fontFamily: {
+            playfair: ['"Playfair Display"', 'serif'],
+            inter: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f1f1f1;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    /* Accordion container */
-    .resume-section {
-      background: white;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    /* Accordion header */
-    .section-title {
-      padding: 15px;
-      cursor: pointer;
-      background: #333;
-      color: white;
-      font-size: 18px;
-      border-radius: 5px 5px 0 0;
-    }
-    /* Content inside accordion */
-    .section-content {
-      display: none; /* hidden by default */
-      padding: 15px;
-      line-height: 1.6;
-      font-size: 15px;
-    }
-    /* When section is open */
-    .active .section-content {
-      display: block;
-    }
+    html { scroll-behavior: smooth; }
+    ::selection { background-color: #7B1113; color: #ffffff; }
   </style>
 </head>
-<body>
-  <h1>My Resume</h1>
-  <!-- Education -->
-  <div class="resume-section">
-    <div class="section-title">🎓 Education</div>
-    <div class="section-content">
-      <p><b>B.Sc. Information Technology</b> - DSVV (2023 - 2027)</p>
-      <p><b>Senior Secondary</b> - ABC (2023)</p>
-      <p><b>Secondary</b> - ABC (2021)</p>
+
+<body class="bg-ivory text-charcoal font-inter antialiased">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gold/20 shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18 py-4">
+        <a href="#home" class="flex items-center gap-2">
+          <span class="w-10 h-10 rounded-full bg-crimson text-gold flex items-center justify-center text-lg shadow-md">
+            <i class="fa-solid fa-om"></i>
+          </span>
+          <span class="font-playfair text-xl sm:text-2xl font-bold tracking-tight">
+            <span class="text-crimson">Aastha</span> <span class="text-charcoal">Handicrafts</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="text-sm font-medium text-charcoal hover:text-crimson transition duration-300">Home</a>
+          <a href="#collections" class="text-sm font-medium text-charcoal hover:text-crimson transition duration-300">Collections</a>
+          <a href="#about" class="text-sm font-medium text-charcoal hover:text-crimson transition duration-300">About</a>
+          <a href="#inquiry" class="text-sm font-medium text-charcoal hover:text-crimson transition duration-300">Inquiry</a>
+          <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts."
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 bg-wa hover:bg-wadark text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md transition duration-300">
+            <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
+          </a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-charcoal hover:bg-gray-50 transition duration-300" aria-label="Toggle menu" aria-expanded="false">
+          <i id="menu-icon" class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden pb-5 space-y-1 border-t border-gray-100 pt-3">
+        <a href="#home" class="block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-crimson/5 hover:text-crimson transition duration-300">Home</a>
+        <a href="#collections" class="block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-crimson/5 hover:text-crimson transition duration-300">Collections</a>
+        <a href="#about" class="block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-crimson/5 hover:text-crimson transition duration-300">About</a>
+        <a href="#inquiry" class="block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-crimson/5 hover:text-crimson transition duration-300">Inquiry</a>
+        <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts."
+           target="_blank" rel="noopener"
+           class="mt-2 flex items-center justify-center gap-2 bg-wa hover:bg-wadark text-white text-sm font-semibold px-5 py-3 rounded-full shadow-md transition duration-300">
+          <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section id="home" class="relative overflow-hidden scroll-mt-24">
+      <div class="absolute top-[-8rem] right-[-8rem] w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-[-6rem] left-[-6rem] w-80 h-80 bg-crimson/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 border border-gold/50 bg-gold/10 text-golddeep text-xs font-semibold tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6">
+            <i class="fa-solid fa-star text-[10px]"></i> Raksha Bandhan Special Collection
+          </span>
+
+          <h1 class="font-playfair text-4xl sm:text-5xl xl:text-6xl font-bold leading-tight text-charcoal">
+            Celebrate the Bond of Love with
+            <span class="text-crimson">Premium Handcrafted Rakhis</span>
+          </h1>
+
+          <p class="mt-5 font-playfair italic text-2xl sm:text-3xl text-crimson font-semibold">
+            आपका विश्वास, हमारी पहचान
+          </p>
+
+          <p class="mt-5 text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Exquisite Rakhis woven with devotion by master artisans of Rajasthan.
+            Timeless designs, premium materials and the warmth of tradition — delivered to your doorstep.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-3 bg-crimson hover:bg-crimsondark text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-crimson/25 transition duration-300 w-full sm:w-auto">
+              <i class="fa-brands fa-whatsapp text-xl"></i> Shop on WhatsApp
+            </a>
+            <a href="#collections"
+               class="inline-flex items-center justify-center gap-2 border-2 border-gold text-golddeep hover:bg-gold hover:text-white font-semibold px-8 py-[14px] rounded-xl transition duration-300 w-full sm:w-auto">
+              Explore Collections <i class="fa-solid fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative max-w-lg w-full mx-auto lg:max-w-none">
+          <div class="absolute -top-4 -right-4 w-full h-full border-2 border-gold/60 rounded-2xl hidden md:block"></div>
+          <img src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=1000&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://picsum.photos/seed/rakhi-hero/900/1100';"
+               alt="Festive Rakhi celebration with traditional decorations"
+               class="relative w-full h-[380px] sm:h-[440px] lg:h-[520px] object-cover rounded-2xl shadow-2xl" />
+          <div class="absolute -bottom-6 left-4 sm:left-8 bg-white rounded-xl shadow-xl border border-gold/30 px-5 py-4 flex items-center gap-4">
+            <span class="w-11 h-11 rounded-lg bg-crimson/10 text-crimson flex items-center justify-center text-xl">
+              <i class="fa-solid fa-medal"></i>
+            </span>
+            <span>
+              <span class="block text-sm font-bold text-charcoal">Trusted Craftsmanship</span>
+              <span class="block text-xs text-gray-500">Serving retailers across India</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TRUST BADGES ================= -->
+    <section class="bg-white border-y border-gold/20 mt-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+        <div class="flex flex-col items-center gap-3">
+          <span class="w-14 h-14 rounded-full bg-gold/15 text-golddeep flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </span>
+          <h3 class="font-semibold text-charcoal">100% Handcrafted</h3>
+          <p class="text-sm text-gray-500 -mt-2">Made with love by skilled artisans</p>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <span class="w-14 h-14 rounded-full bg-gold/15 text-golddeep flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-gem"></i>
+          </span>
+          <h3 class="font-semibold text-charcoal">Premium Quality</h3>
+          <p class="text-sm text-gray-500 -mt-2">Finest materials &amp; intricate detailing</p>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <span class="w-14 h-14 rounded-full bg-gold/15 text-golddeep flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-people-group"></i>
+          </span>
+          <h3 class="font-semibold text-charcoal">Direct from Artisans</h3>
+          <p class="text-sm text-gray-500 -mt-2">Fair trade, straight from our workshop</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COLLECTIONS ================= -->
+    <section id="collections" class="py-20 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="text-xs font-semibold tracking-[0.25em] uppercase text-golddeep">Our Collections</p>
+          <h2 class="mt-3 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal">Exquisite Rakhi Categories</h2>
+          <div class="mt-5 flex items-center justify-center gap-3">
+            <span class="h-px w-12 bg-gold"></span>
+            <i class="fa-solid fa-om text-gold"></i>
+            <span class="h-px w-12 bg-gold"></span>
+          </div>
+          <p class="mt-5 text-gray-600 leading-relaxed">
+            Each Rakhi is a masterpiece — blending age-old Rajasthani artistry with contemporary elegance.
+            Order your favourites directly on WhatsApp.
+          </p>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop"
+                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/rudraksha/700/500';"
+                   alt="Rudraksha Rakhi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-playfair text-xl font-bold text-charcoal mb-2">Rudraksha Rakhi</h3>
+              <p class="text-sm text-gray-500 mb-5">Sacred rudraksha beads strung with devotion for your beloved brother.</p>
+              <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts.%20Specifically%20the%20Rudraksha%20Rakhi."
+                 target="_blank" rel="noopener"
+                 class="flex items-center justify-center gap-2 w-full bg-wa hover:bg-wadark text-white text-sm font-semibold py-3 rounded-lg transition duration-300">
+                <i class="fa-brands fa-whatsapp text-base"></i> Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop"
+                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/designer-ad/700/500';"
+                   alt="Designer AD Rakhi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-playfair text-xl font-bold text-charcoal mb-2">Designer AD Rakhi</h3>
+              <p class="text-sm text-gray-500 mb-5">Sparkling American Diamond craftsmanship for a truly royal statement.</p>
+              <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts.%20Specifically%20the%20Designer%20AD%20Rakhi."
+                 target="_blank" rel="noopener"
+                 class="flex items-center justify-center gap-2 w-full bg-wa hover:bg-wadark text-white text-sm font-semibold py-3 rounded-lg transition duration-300">
+                <i class="fa-brands fa-whatsapp text-base"></i> Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop"
+                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/kundan/700/500';"
+                   alt="Kundan Rakhi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-playfair text-xl font-bold text-charcoal mb-2">Kundan Rakhi</h3>
+              <p class="text-sm text-gray-500 mb-5">Regal kundan stone work inspired by timeless Rajasthani heritage.</p>
+              <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts.%20Specifically%20the%20Kundan%20Rakhi."
+                 target="_blank" rel="noopener"
+                 class="flex items-center justify-center gap-2 w-full bg-wa hover:bg-wadark text-white text-sm font-semibold py-3 rounded-lg transition duration-300">
+                <i class="fa-brands fa-whatsapp text-base"></i> Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=800&auto=format&fit=crop"
+                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/lumba-set/700/500';"
+                   alt="Lumba Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-playfair text-xl font-bold text-charcoal mb-2">Lumba Set</h3>
+              <p class="text-sm text-gray-500 mb-5">Elegant Bhabhi Lumba pairs crafted to celebrate every festival together.</p>
+              <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts.%20Specifically%20the%20Lumba%20Set."
+                 target="_blank" rel="noopener"
+                 class="flex items-center justify-center gap-2 w-full bg-wa hover:bg-wadark text-white text-sm font-semibold py-3 rounded-lg transition duration-300">
+                <i class="fa-brands fa-whatsapp text-base"></i> Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=800&auto=format&fit=crop"
+                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/kids-rakhi/700/500';"
+                   alt="Kids Soft Rakhi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-playfair text-xl font-bold text-charcoal mb-2">Kids Soft Rakhi</h3>
+              <p class="text-sm text-gray-500 mb-5">Soft, skin-friendly and playful designs your little ones will adore.</p>
+              <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts.%20Specifically%20the%20Kids%20Soft%20Rakhi."
+                 target="_blank" rel="noopener"
+                 class="flex items-center justify-center gap-2 w-full bg-wa hover:bg-wadark text-white text-sm font-semibold py-3 rounded-lg transition duration-300">
+                <i class="fa-brands fa-whatsapp text-base"></i> Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=800&auto=format&fit=crop"
+                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/pearl-rakhi/700/500';"
+                   alt="Pearl Rakhi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-playfair text-xl font-bold text-charcoal mb-2">Pearl Rakhi</h3>
+              <p class="text-sm text-gray-500 mb-5">Lustrous pearls woven into delicate patterns of brotherly love.</p>
+              <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts.%20Specifically%20the%20Pearl%20Rakhi."
+                 target="_blank" rel="noopener"
+                 class="flex items-center justify-center gap-2 w-full bg-wa hover:bg-wadark text-white text-sm font-semibold py-3 rounded-lg transition duration-300">
+                <i class="fa-brands fa-whatsapp text-base"></i> Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHOLESALE INQUIRY ================= -->
+    <section id="inquiry" class="py-20 bg-crimson relative overflow-hidden scroll-mt-24">
+      <div class="absolute top-[-6rem] left-[-6rem] w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-[-6rem] right-[-6rem] w-80 h-80 bg-black/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-12 items-center">
+        <div class="lg:col-span-2 text-center lg:text-left">
+          <p class="text-xs font-semibold tracking-[0.25em] uppercase text-gold">Wholesale Inquiries</p>
+          <h2 class="mt-3 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Bulk Orders &amp; Inquiries</h2>
+          <p class="mt-5 text-white/80 leading-relaxed">
+            Retailers, shops and distributors — partner with Aastha Handicrafts for premium Rakhis at unbeatable wholesale prices.
+          </p>
+          <ul class="mt-7 space-y-4 text-left inline-block">
+            <li class="flex items-start gap-3 text-white/90">
+              <i class="fa-solid fa-circle-check text-gold mt-1"></i> Special wholesale pricing for retailers
+            </li>
+            <li class="flex items-start gap-3 text-white/90">
+              <i class="fa-solid fa-circle-check text-gold mt-1"></i> Pan-India shipping &amp; secure packaging
+            </li>
+            <li class="flex items-start gap-3 text-white/90">
+              <i class="fa-solid fa-circle-check text-gold mt-1"></i> Custom designs &amp; private labeling available
+            </li>
+          </ul>
+          <p class="mt-8 text-white/70 text-sm">
+            Prefer to talk? Call us at
+            <a href="tel:+919928607427" class="text-gold font-semibold hover:underline">+91 99286 07427</a>
+          </p>
+        </div>
+
+        <div class="lg:col-span-3">
+          <form action="#" method="POST" class="bg-white rounded-xl shadow-2xl p-6 sm:p-10">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-charcoal mb-2">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required
+                       class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 transition duration-300" />
+              </div>
+              <div>
+                <label for="location" class="block text-sm font-semibold text-charcoal mb-2">Location / From</label>
+                <input type="text" id="location" name="location" placeholder="City, State" required
+                       class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 transition duration-300" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-charcoal mb-2">Contact Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required
+                       class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 transition duration-300" />
+              </div>
+              <div>
+                <label for="amount" class="block text-sm font-semibold text-charcoal mb-2">Expected Order Amount</label>
+                <select id="amount" name="amount" required
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-600 bg-white focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 transition duration-300">
+                  <option value="" disabled selected>Select order value</option>
+                  <option>Below ₹1,000</option>
+                  <option>₹1,000 to ₹5,000</option>
+                  <option>₹6,000 to ₹10,000</option>
+                  <option>₹10,000 to ₹50,000</option>
+                  <option>More than ₹50,000</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit"
+                    class="mt-7 w-full inline-flex items-center justify-center gap-3 bg-crimson hover:bg-crimsondark text-white font-semibold tracking-wide py-4 rounded-lg shadow-lg shadow-crimson/25 transition duration-300">
+              <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+            </button>
+            <p class="mt-4 text-center text-xs text-gray-400">We usually respond within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT US ================= -->
+    <section id="about" class="py-20 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-[0.25em] uppercase text-golddeep">Our Story</p>
+          <h2 class="mt-3 font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-tight">
+            Rooted in Tradition,<br />Crafted with Devotion
+          </h2>
+          <div class="mt-5 flex items-center gap-3">
+            <span class="h-px w-12 bg-gold"></span>
+            <i class="fa-solid fa-om text-gold"></i>
+          </div>
+          <p class="mt-6 text-gray-600 leading-relaxed">
+            Aastha Handicrafts was founded by the Agrawal family —
+            <strong class="text-charcoal">Damodar Agrawal, Alok Agrawal</strong> and
+            <strong class="text-charcoal">Indresh Agrawal</strong> — with a single vision:
+            to carry the rich heritage of Rajasthani craftsmanship into every home celebrating Raksha Bandhan.
+          </p>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            From our workshop in Lalsot, Dausa, we work hand-in-hand with local artisans,
+            preserving traditional techniques while crafting designs that modern hearts adore.
+            Every thread, bead and stone reflects their unwavering dedication to quality —
+            because for us, every Rakhi is not just a product, it is a promise.
+          </p>
+          <p class="mt-6 font-playfair italic text-xl text-crimson font-semibold">आपका विश्वास, हमारी पहचान</p>
+        </div>
+
+        <div class="space-y-5">
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg border border-gray-100 p-6 flex items-center gap-5 transition duration-300">
+            <span class="shrink-0 w-16 h-16 rounded-full bg-crimson text-gold font-playfair text-2xl font-bold flex items-center justify-center shadow-inner">DA</span>
+            <div>
+              <h3 class="font-playfair text-xl font-bold text-charcoal">Damodar Agrawal</h3>
+              <p class="text-sm text-golddeep font-medium">Founder</p>
+              <p class="text-sm text-gray-500 mt-1">The visionary who laid the foundation of Aastha's artisan legacy.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg border border-gray-100 p-6 flex items-center gap-5 transition duration-300">
+            <span class="shrink-0 w-16 h-16 rounded-full bg-crimson text-gold font-playfair text-2xl font-bold flex items-center justify-center shadow-inner">AA</span>
+            <div>
+              <h3 class="font-playfair text-xl font-bold text-charcoal">Alok Agrawal</h3>
+              <p class="text-sm text-golddeep font-medium">Co-Founder</p>
+              <p class="text-sm text-gray-500 mt-1">Guardian of quality, ensuring every piece meets the Aastha standard.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg border border-gray-100 p-6 flex items-center gap-5 transition duration-300">
+            <span class="shrink-0 w-16 h-16 rounded-full bg-crimson text-gold font-playfair text-2xl font-bold flex items-center justify-center shadow-inner">IA</span>
+            <div>
+              <h3 class="font-playfair text-xl font-bold text-charcoal">Indresh Agrawal</h3>
+              <p class="text-sm text-golddeep font-medium">Co-Founder</p>
+              <p class="text-sm text-gray-500 mt-1">Carrying traditional craftsmanship forward to a new generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-charcoal text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <div>
+          <a href="#home" class="flex items-center gap-2">
+            <span class="w-10 h-10 rounded-full bg-crimson text-gold flex items-center justify-center text-lg">
+              <i class="fa-solid fa-om"></i>
+            </span>
+            <span class="font-playfair text-xl font-bold text-white"><span class="text-gold">Aastha</span> Handicrafts</span>
+          </a>
+          <p class="mt-4 font-playfair italic text-gold text-lg">आपका विश्वास, हमारी पहचान</p>
+          <p class="mt-3 text-sm text-gray-400 leading-relaxed">Premium handcrafted Rakhis, made with devotion in Rajasthan.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-crimson hover:border-crimson hover:text-white transition duration-300">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-crimson hover:border-crimson hover:text-white transition duration-300">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-5">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#home" class="hover:text-gold transition duration-300"><i class="fa-solid fa-angle-right text-gold mr-2 text-xs"></i>Home</a></li>
+            <li><a href="#collections" class="hover:text-gold transition duration-300"><i class="fa-solid fa-angle-right text-gold mr-2 text-xs"></i>Collections</a></li>
+            <li><a href="#about" class="hover:text-gold transition duration-300"><i class="fa-solid fa-angle-right text-gold mr-2 text-xs"></i>About Us</a></li>
+            <li><a href="#inquiry" class="hover:text-gold transition duration-300"><i class="fa-solid fa-angle-right text-gold mr-2 text-xs"></i>Bulk Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-5">Contact Us</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-location-dot text-gold mt-1"></i>
+              <span>Ganesh Colony, Near Post Office,<br />Village-Mandawari, Block-Lalsot,<br />Dist- Dausa, Rajasthan 303504</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-phone text-gold mt-1"></i>
+              <span>
+                <a href="tel:+919928607427" class="hover:text-gold transition duration-300">+91 99286 07427</a><br />
+                <a href="tel:+919772549030" class="hover:text-gold transition duration-300">+91 97725 49030</a>
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-envelope text-gold mt-1"></i>
+              <a href="mailto:handicraftsaastha@gmail.com" class="hover:text-gold transition duration-300 break-all">handicraftsaastha@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-5">Shop Hours</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-clock text-gold mt-1"></i>
+              <span>Everyday<br />8:00 AM – 11:00 PM</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-calendar-check text-gold mt-1"></i>
+              <span>Open on all festivals &amp; special occasions</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts."
+             target="_blank" rel="noopener"
+             class="mt-6 inline-flex items-center gap-2 bg-wa hover:bg-wadark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition duration-300">
+            <i class="fa-brands fa-whatsapp"></i> Chat with us
+          </a>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+        <p>&copy; <span id="year">2026</span> Aastha Handicrafts. All rights reserved.</p>
+        <p>Crafted with <i class="fa-solid fa-heart text-crimson"></i> in Rajasthan, India</p>
+      </div>
     </div>
-  </div>
-  <!-- Skills -->
-  <div class="resume-section">
-    <div class="section-title">💻 Skills</div>
-    <div class="section-content">
-      <p>JavaScript, HTML, CSS</p>
-      <p>System Analysis and Design</p>
-      <p>Operating System</p>
-    </div>
-  </div>
-  <!-- Experience -->
-  <div class="resume-section">
-    <div class="section-title">🏢 Experience</div>
-    <div class="section-content">
-      <p><b>Intern - AI and DATA SCIENCE intern</b>, Assetplus Consulting (2025)</p>
-      <p>Worked on building responsive websites and fixing bugs.</p>
-    </div>
-  </div>
-  <!-- Projects -->
-  <div class="resume-section">
-    <div class="section-title">📂 Projects</div>
-    <div class="section-content">
-      <p><b>E-commorse Website:</b> A simple app to Showcase Products</p>
-      <p><b>Portfolio Website:</b> My personal website hosted on GitHub Pages.</p>
-    </div>
-  </div>
-  <!-- Contact -->
-  <div class="resume-section">
-    <div class="section-title">📞 Contact</div>
-    <div class="section-content">
-      <p>Email: sanskritiagrawal@gmail.com</p>
-      <p>Phone: +91 9876543210</p>
-      <!-- <p>GitHub: github.com/myprofile</p> -->
-    </div>
-  </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919928607427?text=Hello!%20I%20am%20interested%20in%20ordering%20Rakhis%20from%20Aastha%20Handicrafts."
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+     class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-wa hover:bg-wadark text-white rounded-full shadow-xl flex items-center justify-center text-2xl transition duration-300 hover:scale-110">
+    <span class="absolute inset-0 rounded-full bg-wa animate-ping opacity-25"></span>
+    <i class="fa-brands fa-whatsapp relative"></i>
+  </a>
 
   <script>
-    // grab all sections
-    let sections = document.querySelectorAll(".resume-section");
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
 
-    // loop through them and add click functionality
-    sections.forEach(section => {
-      let title = section.querySelector(".section-title");
-      title.addEventListener("click", () => {
-        section.classList.toggle("active"); // toggle the open state
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-xmark');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuIcon.classList.add('fa-bars');
+        menuIcon.classList.remove('fa-xmark');
       });
     });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
