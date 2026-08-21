@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    /* Accordion container */
+    .resume-section {
+      background: white;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    /* Accordion header */
+    .section-title {
+      padding: 15px;
+      cursor: pointer;
+      background: #333;
+      color: white;
+      font-size: 18px;
+      border-radius: 5px 5px 0 0;
+    }
+    /* Content inside accordion */
+    .section-content {
+      display: none; /* hidden by default */
+      padding: 15px;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    /* When section is open */
+    .active .section-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Resume</h1>
+  <!-- Education -->
+  <div class="resume-section">
+    <div class="section-title">🎓 Education</div>
+    <div class="section-content">
+      <p><b>B.Sc. Information Technology</b> - DSVV (2023 - 2027)</p>
+      <p><b>Senior Secondary</b> - ABC (2023)</p>
+      <p><b>Secondary</b> - ABC (2021)</p>
+    </div>
+  </div>
+  <!-- Skills -->
+  <div class="resume-section">
+    <div class="section-title">💻 Skills</div>
+    <div class="section-content">
+      <p>JavaScript, HTML, CSS</p>
+      <p>System Analysis and Design</p>
+      <p>Operating System</p>
+    </div>
+  </div>
+  <!-- Experience -->
+  <div class="resume-section">
+    <div class="section-title">🏢 Experience</div>
+    <div class="section-content">
+      <p><b>Intern - AI and DATA SCIENCE intern</b>, Assetplus Consulting (2025)</p>
+      <p>Worked on building responsive websites and fixing bugs.</p>
+    </div>
+  </div>
+  <!-- Projects -->
+  <div class="resume-section">
+    <div class="section-title">📂 Projects</div>
+    <div class="section-content">
+      <p><b>E-commorse Website:</b> A simple app to Showcase Products</p>
+      <p><b>Portfolio Website:</b> My personal website hosted on GitHub Pages.</p>
+    </div>
+  </div>
+  <!-- Contact -->
+  <div class="resume-section">
+    <div class="section-title">📞 Contact</div>
+    <div class="section-content">
+      <p>Email: sanskritiagrawal@gmail.com</p>
+      <p>Phone: +91 9876543210</p>
+      <!-- <p>GitHub: github.com/myprofile</p> -->
+    </div>
+  </div>
+
+  <script>
+    // grab all sections
+    let sections = document.querySelectorAll(".resume-section");
+
+    // loop through them and add click functionality
+    sections.forEach(section => {
+      let title = section.querySelector(".section-title");
+      title.addEventListener("click", () => {
+        section.classList.toggle("active"); // toggle the open state
+      });
+    });
+  </script>
+</body>
+</html>
